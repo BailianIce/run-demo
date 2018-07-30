@@ -1,0 +1,18 @@
+server:
+  port: 8761
+  
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+# registerWithEureka: false
+# fetchRegistry: false
+# 忽略当前服务注册到注册中心
+# hostname 后续做集群需要关注    
+
+# defaultZone: 标识注册中心暴露的地址，如果是客户端表示注册中心访问地址，配置多个就是集群(使用逗号隔开)
